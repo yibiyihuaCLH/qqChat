@@ -124,12 +124,14 @@ public class OpenAIChatApi {
         //返回error信息
         if (jsonObject.get("error") != null) {
             JSONObject error = JSONUtil.parseObj(jsonObject.get("error"));
-            //如果报错类型为“超出上下文长度”
-            if ("context_length_exceeded".equals(error.get("type").toString())) {
-                //删除历史记录第一个元素，再提问
+            String code = String.valueOf(error.get("code"));
+            if ("context_length_exceeded".equals(code)) {
+                //“超出上下文长度”，删除历史记录第一个元素，再提问
                 dataList.remove(0);
                 return askQuestion(dataList,question);
-            }else {
+            }else if ("invalid_api_key".equals(code)) {
+                return "key过期，请更新";
+            } else {
                 //其他报错暂时直接返回报错信息
                 return error.get("message").toString();
             }
