@@ -1,4 +1,5 @@
 # qqChat
+```
 主要详解src/main/resources/下的inf.properties配置文件
 #机器人qq号码，自己注册个小号
 qq.bot=
@@ -20,3 +21,4 @@ redis.port=6379
 proxy=true
 proxy.host=127.0.0.1
 proxy.port=10809
+```
