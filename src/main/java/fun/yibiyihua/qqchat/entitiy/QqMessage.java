@@ -1,6 +1,6 @@
 package fun.yibiyihua.qqchat.entitiy;
 
-import fun.yibiyihua.qqchat.enums.MessageType;
+import fun.yibiyihua.qqchat.constants.MessageType;
 import lombok.Data;
 
 /**
@@ -11,7 +11,7 @@ import lombok.Data;
  * @version: 1.0
  */
 @Data
-public class Message {
+public class QqMessage {
     /*上报类型
     message	消息, 例如, 群聊消息
     request	请求, 例如, 好友申请
@@ -23,7 +23,7 @@ public class Message {
     private 私聊
     group 群聊
     */
-    private MessageType message_type;
+    private String message_type;
     //事件发生的时间戳
     private Long time;
     //收到事件的机器人 QQ 号

@@ -1,8 +1,7 @@
 package fun.yibiyihua.qqchat.thread;
 
+import fun.yibiyihua.qqchat.constants.InfoProperties;
 import fun.yibiyihua.qqchat.ws.Client;
-
-import java.util.ResourceBundle;
 
 /**
  * @author: yibiyihua
@@ -16,7 +15,7 @@ public class ReConnectTask implements Runnable {
     public void run() {
         //重连死循环，直至连接成功
         while (true) {
-            if (Client.connect(ResourceBundle.getBundle("inf").getString("websocket.url"))) {
+            if (Client.connect(InfoProperties.WEBSOCKET_URL)) {
                 break;
             } else {
                 try {

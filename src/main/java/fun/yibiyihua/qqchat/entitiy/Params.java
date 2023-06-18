@@ -1,6 +1,5 @@
 package fun.yibiyihua.qqchat.entitiy;
 
-import fun.yibiyihua.qqchat.enums.MessageType;
 import lombok.Data;
 
 /**
@@ -13,7 +12,7 @@ import lombok.Data;
 @Data
 public class Params {
     //消息类型, 支持 private、group , 分别对应私聊、群组, 如不传入, 则根据传入的 *_id 参数判断
-    private MessageType message_type;
+    private String message_type;
     //对方 QQ 号 ( 消息类型为 private 时需要 )
     private String user_id;
     //群号 ( 消息类型为 group 时需要 )

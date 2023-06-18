@@ -1,10 +1,9 @@
 package fun.yibiyihua.qqchat.components;
 
+import fun.yibiyihua.qqchat.constants.InfoProperties;
 import fun.yibiyihua.qqchat.ws.Client;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.ResourceBundle;
 
 /**
  * @author: yibiyihua
@@ -19,7 +18,7 @@ public class Start implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //连接客户端
-        if (!Client.connect(ResourceBundle.getBundle("inf").getString("websocket.url"))) {
+        if (!Client.connect(InfoProperties.WEBSOCKET_URL)) {
             //未连接成功，重连
             Client.reConnect();
         }
