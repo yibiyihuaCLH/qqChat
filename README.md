@@ -7,7 +7,7 @@ qq.bot=
 qq.adm=
 #path（默认也行，上下文缓存文件，随便找个文件目录就行）
 answer.path=/opt/qqBot/openAIJson/
-#jianting端口，跟go-chttp相同，websocket
+#监听端口，跟go-chttp相同，websocket
 websocket.url=ws://127.0.0.1:9999
 #openai（openai请求端口，不用动）
 openai.url=https://api.openai.com/v1/chat/completions
